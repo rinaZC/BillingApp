@@ -1,0 +1,1 @@
+export MONGODB_URI="mongodb+srv://newUser27:123@myfirstcluster-rw8qi.mongodb.net/BillTrack?retryWrites=true&w=majority"
