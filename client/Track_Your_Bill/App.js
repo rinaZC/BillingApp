@@ -1,19 +1,36 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+import { createStackNavigator, createAppContainer } from "react-navigation";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
-}
+import LoginScreen from "./Screens/LoginScreen";
+import RegisterScreen from "./Screens/RegisterScreen";
+import MainScreen from "./Screens/MainScreen";
+import ViewToday from "./Screens/ViewToday";
+import ManageBudgets from "./Screens/ManageBudgets";
+import SetTemplate from "./Screens/SetTemplate";
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+// import { SCREENS } from "./constants";
+
+const Navigator = createStackNavigator(
+  {
+    Login: LoginScreen,
+    Register: RegisterScreen,
+    Main: MainScreen,
+    ViewToday: ViewToday,
+    ManageBudgets: ManageBudgets,
+    SetTemplate: SetTemplate
   },
-});
+  { initialRouteName: "Login" }
+);
+
+// class App extends React.Component {
+//   constructor(props) {
+//     super(props);
+//   }
+//   render() {
+//     return <LoginScreen />;
+//   }
+// }
+
+export default createAppContainer(Navigator);
+//export default App;
